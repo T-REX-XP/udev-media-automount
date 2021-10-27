@@ -8,4 +8,4 @@ install:
 	install -d $(DESTDIR)/etc/media-automount.d
 	install -Cm644 media-automount.d/* $(DESTDIR)/etc/media-automount.d/
 	install -Dm644 gpio_export.sh /usr/local/bin/gpio_export.sh
-        install -Dm644 gpio.service /usr/lib/systemd/system/gpio.service
+	install -Dm644 gpio.service /usr/lib/systemd/system/gpio.service
