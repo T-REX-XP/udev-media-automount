@@ -7,7 +7,7 @@
 # udev will kill the running process and all childs after 4-5 seconds, so the
 # mounting has to be done as a separate "service"
 
-KERNEL=="mmcblk[1-9]*", ACTION=="add",          RUN+="/usr/bin/systemctl --no-block restart media-automount@%k.service"
+KERNEL=="mmcblk[1-9]*", ACTION=="add", ATTRS{name}!="SLD32G",         RUN+="/usr/bin/systemctl --no-block restart media-automount@%k.service"
 KERNEL=="sd[a-z]*", ACTION=="add",      RUN+="/usr/bin/systemctl --no-block restart media-automount@%k.service"
 
 # clean up after device removal
